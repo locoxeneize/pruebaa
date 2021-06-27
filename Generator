@@ -1,0 +1,33 @@
+import random
+import string
+
+n = 12
+
+def generar_contraseña(n):
+    clave = ""
+    caracteres = list(string.printable)
+    caracteres = caracteres[:-6]
+
+    for i in range(n):
+        clave += random.choice(caracteres)
+         #print(i)
+         #print(s)
+         #print(s[0])
+
+    return clave
+
+archivo=open('ContraseñasGeneradas.txt','w')
+archivo.close()
+archivo=open('ContraseñasGeneradas.txt','a')
+
+
+for i in range(100):
+    generar = generar_contraseña(12)
+    #print(generar)
+    archivo.write(generar) 
+    archivo.write('\n')    
+
+caracteres = list(string.printable)
+caracteres = caracteres[:-6]
+
+#print(caracteres)
